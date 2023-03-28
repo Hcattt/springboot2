@@ -8,5 +8,7 @@ COPY src ./src
 # Build a release artifact.
 RUN mvn clean package -Dmaven.test.skip=true
 
+EXPOSE 8080
+
 # Run the web service on container startup.
 ENTRYPOINT ["java","-jar","/app/target/demo1-0.0.1-SNAPSHOT.jar"]
