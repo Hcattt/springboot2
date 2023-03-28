@@ -6,7 +6,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Build a release artifact.
-RUN mvn -s /app/settings.xml clean package -Dmaven.test.skip=true
+RUN mvn clean package -Dmaven.test.skip=true
 
 # Run the web service on container startup.
 ENTRYPOINT ["java","-jar","/app/target/demo1-0.0.1-SNAPSHOT.jar"]
